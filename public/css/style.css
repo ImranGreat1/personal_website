@@ -1,0 +1,247 @@
+/* 
+    0 - 600px:      Phone
+    600 - 900px:    Tablet portrait
+    900 - 1200px:   Tablet landscape
+    [1200 - 1800] // This is our defined styling    
+    1800 + : larger desktop
+*/
+/* @mixin phoneRespond {
+    @media (max-width: 37.5em) {
+        @content
+    };
+} */
+/*
+html {
+    @include phoneResond {
+        // any styling we put here will replace the @content directive
+    }
+}
+*/
+/*
+COLORS:
+
+#777
+#afafaf
+#f5f5f5
+#a1a1a1
+#c8c8c8
+#484848
+#494949
+#000
+#333
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+/*
+    For universal selecting, it is also best practical to add
+    pseudo elements to avoid unexpected or weird behaviour
+*/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  /* box-sizing best practice. set on the body and inherit using the universal 
+  selector*/
+  box-sizing: inherit;
+}
+
+html {
+  /* Equals = 10px. 62.5% of the default browser font-size which si 16px.
+  This give the user the ability to change the default size in the settings*/
+  /* font-size: 62.5%; */
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 70%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+}
+@media only screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: #333;
+  color: #afafaf;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-mb-small {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-mb-medium {
+  margin-bottom: 4rem !important;
+}
+@media only screen and (max-width: 56.25em) {
+  .u-mb-medium {
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+.u-mb-large {
+  margin-bottom: 8rem !important;
+}
+@media only screen and (max-width: 56.25em) {
+  .u-mb-large {
+    margin-bottom: 4rem !important;
+  }
+}
+
+.u-mb-xl {
+  margin-bottom: 12rem !important;
+}
+@media only screen and (max-width: 56.25em) {
+  .u-mb-xl {
+    margin-bottom: 8rem !important;
+  }
+}
+
+.u-mt-small {
+  margin-top: 1.5rem !important;
+}
+
+.u-mt-medium {
+  margin-top: 4rem !important;
+}
+@media only screen and (max-width: 56.25em) {
+  .u-mt-medium {
+    margin-top: 2.5rem !important;
+  }
+}
+
+.u-mt-large {
+  margin-top: 8rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .u-mt-large {
+    margin-top: 4rem !important;
+  }
+}
+
+.u-mt-xl {
+  margin-top: 12rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .u-mt-xl {
+    margin-top: 8rem !important;
+  }
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 1.4rem;
+  padding-top: 2rem;
+}
+.header .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  box-shadow: 0 1px 4px #e2e2e2;
+  z-index: 1;
+}
+.header .nav__container {
+  display: flex;
+  align-items: center;
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.header .nav__logo {
+  display: inline-block;
+  height: 6.5rem;
+  margin-right: auto;
+}
+.header .nav__list {
+  list-style: none;
+  display: flex;
+}
+.header .nav__item:not(:last-child) {
+  margin-right: 3rem;
+}
+.header .nav__link, .header .nav__link:link, .header .nav__link:visited {
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #777;
+  transition: all 0.2s;
+  position: relative;
+}
+.header .nav__link::before, .header .nav__link:link::before, .header .nav__link:visited::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 0%;
+  height: 2px;
+  background-color: #afafaf;
+  transform: translateY(-50%);
+  transform-origin: left;
+  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+}
+.header .nav__link:hover, .header .nav__link:link:hover, .header .nav__link:visited:hover {
+  color: #afafaf;
+}
+.header .nav__link:hover::before, .header .nav__link:link:hover::before, .header .nav__link:visited:hover::before {
+  width: 120%;
+}
+.header .nav__hamburger-menu {
+  margin-left: 3rem;
+  width: 1.8rem;
+  height: 1px;
+  background-color: #616161;
+  position: relative;
+}
+.header .nav__hamburger-menu::before, .header .nav__hamburger-menu::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+.header .nav__hamburger-menu:after {
+  top: 4px;
+}
+.header .nav__hamburger-menu::before {
+  top: -5px;
+}
+.header .content {
+  padding-top: 7rem;
+  height: 200vh;
+}
+
+/*# sourceMappingURL=style.css.map */

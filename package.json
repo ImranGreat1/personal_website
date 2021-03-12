@@ -7,7 +7,16 @@
         "start": "nodemon server.js",
         "start:prod": "nodemon server.js NODE_ENV=production",
         "debug": "ndb server.js",
-        "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+
+        "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+        "watch:sass": "sass --watch sass/main.scss:public/css/style.css",
+        "devServer": "live-server",
+        "start:sass": "npm-run-all --parallel watch:sass devServer",
+        
+        "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+        "prefix:css": "postcss autoprefixer --use 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+        "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+        "build:css": "npm-run-all compile:sass prefix:css compress:css"
     },
     "author": "Imran Suleiman",
     "license": "ISC",
@@ -33,5 +42,8 @@
         "slugify": "^1.4.6",
         "validator": "^13.5.2",
         "xss-clean": "^0.1.1"
+    },
+    "devDependencies": {
+        "npm-run-all": "^4.1.5"
     }
 }
