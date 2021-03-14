@@ -1,7 +1,7 @@
 mixin navItem(name)
-    
         li.nav__item
-            a.nav__link(href='#')= name
+        a.nav__link(href='#' class!=attributes.class)= name
+        
 
 
 .header
@@ -10,11 +10,12 @@ mixin navItem(name)
             img.nav__logo(src='/img/logo.png')
 
             ul.nav__list
-                +navItem('Home')
+                +navItem('Home')(class="nav__link--active")
                 +navItem('About')
                 +navItem('Portfolio')
                 +navItem('Services')
                 +navItem('Blog')
                 +navItem('Contact')
             .nav__hamburger-menu
-    .content Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cum doloremque nesciunt, ab veniam eligendi sapiente ipsum perferendis dolorum vero enim laborum temporibus labore numquam aspernatur debitis eum illo! Iste ipsam animi provident voluptas similique recusandae, vel exercitationem, deserunt facilis doloremque aperiam veniam dolorum repellat reprehenderit dicta atque nulla amet!
+                .nav__hamburger-icon
+    .content serunt facilis doloremque aperiam veniam dolorum repellat reprehenderit dicta atque nulla amet!

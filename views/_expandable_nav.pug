@@ -1,0 +1,16 @@
+mixin expandableItem(name)
+        li.expandable__item
+            a(href='#' class=attributes.class).expandable__link= name
+
+.expandable#in-active
+    img.expandable__logo(src='/img/logo.png')
+    ul.expandable__list
+        +expandableItem('Home')(class="expandable__link--active")
+        +expandableItem('About')
+        +expandableItem('Portfolio')
+        +expandableItem('Services')
+        +expandableItem('Blog')
+        +expandableItem('Contact')
+    .expandable__close-btn
+        span.expandable__close-icon
+

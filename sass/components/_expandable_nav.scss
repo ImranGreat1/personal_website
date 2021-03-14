@@ -1,0 +1,112 @@
+.expandable {
+    background-color: $color-dark-2;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+    height: 100%;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .5s;
+
+    &__logo {
+        display: inline-block;
+        height: 10rem;
+        padding: 4rem 0;
+        box-sizing: content-box;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        border-top: 1px solid $color-dark-6;
+
+        &:last-child {
+            border-bottom: 1px solid $color-dark-6;
+        }
+    }
+
+    &__link,
+    &__link:active,
+    &__link:visited {
+        display: inline-block;
+        padding: 1rem 12rem;
+        color: $color-grey-3;
+        text-decoration: none;
+        width: 100%;
+        transition: all .4s;
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+        
+
+        &:hover {
+            background-color: $color-dark-1;
+        }
+    }
+
+    &__link--active {
+        background-color: $color-dark-1;
+    }
+
+
+    &__close-btn {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        border: 2px solid $color-dark-9;
+        cursor: pointer;
+        transition: .4s all;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        &:hover {
+            border: 2px solid #fff;
+        }
+
+        &:hover .expandable__close-icon::before,
+        &:hover .expandable__close-icon::after {
+            background-color: #fff;
+        }
+    }
+
+    &__close-icon {
+        height: 2px;
+        width: 1.2rem;
+        background-color: transparent;
+        display: inline-block;
+        position: relative;
+
+        &::before,
+        &::after
+         {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(135deg);
+            background-color: $color-dark-9;
+        }
+
+        &::after {
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+
+#in-active {
+    transform: translateX(50rem);
+}
