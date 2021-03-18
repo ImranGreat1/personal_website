@@ -4,18 +4,18 @@
 
 // MARGIN-BOTTOM
 
-.u-mb-small {
+.u-mb-sm {
     margin-bottom: 1.5rem !important;
 }
 
-.u-mb-medium {
+.u-mb-md {
     margin-bottom: 4rem !important;
     @include respond(tab-portrait) {
         margin-bottom: 2.5rem !important;
     }
 }
 
-.u-mb-large {
+.u-mb-lg {
     margin-bottom: 8rem !important;
     @include respond(tab-portrait) {
         margin-bottom: 4rem !important;
@@ -32,18 +32,18 @@
 
 // MARGIN-TOP
 
-.u-mt-small {
+.u-mt-sm {
     margin-top: 1.5rem !important;
 }
 
-.u-mt-medium {
+.u-mt-md {
     margin-top: 4rem !important;
     @include respond(tab-portrait) {
         margin-top: 2.5rem !important;
     }
 }
 
-.u-mt-large {
+.u-mt-lg {
     margin-top: 8rem;
     @include respond(tab-portrait) {
         margin-top: 4rem !important;
