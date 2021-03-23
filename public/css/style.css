@@ -448,11 +448,84 @@ body {
   margin: 1rem 0;
   line-height: 1.8;
 }
-.about__skills {
-  text-align: center;
+.about__stack {
+  padding: 0 7rem;
 }
-.about__items {
+.about__list {
   list-style: none;
+  width: 80%;
+  margin-left: auto;
+}
+.about__item:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.about__skill {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #616161;
+  margin-bottom: 1rem;
+}
+.about__skill-radar {
+  display: block;
+  width: 100%;
+  height: 7px;
+  background-color: #c8c8c8;
+  border-radius: 10px;
+  position: relative;
+}
+.about__skill-radar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  border-radius: inherit;
+  width: 80%;
+  background-color: #484848;
+  z-index: 1000;
+}
+.about__skill-radar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  width: 2rem;
+  height: 2rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 3px solid #a1a1a1;
+  background-color: #484848;
+}
+.about .html::before {
+  width: 90%;
+}
+.about .html::after {
+  left: 90%;
+}
+.about .js::before {
+  width: 90%;
+}
+.about .js::after {
+  left: 90%;
+}
+.about .react::before {
+  width: 85%;
+}
+.about .react::after {
+  left: 85%;
+}
+.about .node::before {
+  width: 90%;
+}
+.about .node::after {
+  left: 90%;
+}
+.about .flutter::before {
+  width: 85%;
+}
+.about .flutter::after {
+  left: 85%;
 }
 
 /*# sourceMappingURL=style.css.map */
