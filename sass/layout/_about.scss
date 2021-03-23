@@ -1,0 +1,40 @@
+.about {
+    padding: 4rem 0;
+    background-color: #fff;
+    font-size: 1.6rem;
+    color: $color-dark-7;
+
+
+    &__container {
+        padding: 4rem 0;
+        display: flex;
+        justify-content: space-between;
+
+        & > * {
+            flex: 0 0 50%; 
+        }
+    }
+
+    &__heading {
+        text-align: center;
+    }
+    // ABOUT DETAILS
+    &__details {
+        padding: 0 2rem;
+    }
+
+    &__paragraph {
+        margin: 1rem 0;
+        line-height: 1.8;
+    }
+
+
+    // ABOUT SKILLS
+    &__skills {
+        text-align: center;
+    }
+
+    &__items {
+        list-style: none;
+    }
+}

@@ -36,7 +36,6 @@ html {
 
 body {
     box-sizing: border-box;
-    background-color: $color-grey-1;
     font-family: 'Poppins', sans-serif;
 
     @include respond(tab-portrait) {

@@ -54,7 +54,6 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: #f5f5f5;
   font-family: "Poppins", sans-serif;
 }
 @media only screen and (max-width: 56.25em) {
@@ -137,6 +136,38 @@ body {
 .container {
   max-width: 114rem;
   margin: 0 auto;
+}
+
+[class^=heading--] {
+  font-weight: 600;
+  color: #484848;
+}
+
+.heading--secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+.heading--tertiary {
+  font-size: 2.3rem;
+}
+
+.lines {
+  height: 2px;
+  background-color: #c8c8c8;
+  width: 60px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 1rem;
+}
+.lines::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  width: 100px;
+  height: 2px;
+  background-color: inherit;
+  transform: translateX(-50%);
 }
 
 .expandable {
@@ -231,7 +262,7 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 1.5rem 5rem;
+  padding: 1.6rem 5rem;
   font-size: 1.4rem;
   font-weight: 600;
   border: none;
@@ -243,7 +274,7 @@ body {
 }
 .btn--dark {
   background-color: #393939;
-  color: #e2e2e2;
+  color: #fff;
 }
 .btn--dark:hover {
   background-color: #000;
@@ -254,7 +285,8 @@ body {
 
 .header {
   font-size: 1.4rem;
-  padding-top: 2rem;
+  padding: 4rem 2rem 0 2rem;
+  background-color: #f5f5f5;
 }
 
 .nav {
@@ -351,7 +383,7 @@ body {
 
 .content {
   height: 100vh;
-  padding-top: 11rem;
+  padding-top: 6.5rem;
   display: flex;
   align-items: center;
 }
@@ -359,8 +391,7 @@ body {
   flex: 1;
 }
 .content__details {
-  align-self: flex-end;
-  padding-bottom: 10rem;
+  align-self: center;
 }
 .content__title {
   font-size: 1.5rem;
@@ -383,15 +414,45 @@ body {
   color: #616161;
 }
 .content__img-box {
-  padding-top: 18rem;
   text-align: right;
+  align-self: stretch;
 }
 .content__img {
-  width: 74%;
-  height: auto;
+  width: 75%;
+  height: 100%;
   display: inline-block;
   margin: 0 auto;
-  align-self: flex-start;
+}
+
+.about {
+  padding: 4rem 0;
+  background-color: #fff;
+  font-size: 1.6rem;
+  color: #616161;
+}
+.about__container {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.about__container > * {
+  flex: 0 0 50%;
+}
+.about__heading {
+  text-align: center;
+}
+.about__details {
+  padding: 0 2rem;
+}
+.about__paragraph {
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+.about__skills {
+  text-align: center;
+}
+.about__items {
+  list-style: none;
 }
 
 /*# sourceMappingURL=style.css.map */

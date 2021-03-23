@@ -62,3 +62,41 @@
     max-width: $grid-width;
     margin: 0 auto;
 }
+
+// Headings
+[class^="heading--"] {
+    font-weight: 600;
+    color: $color-dark-5;
+}
+
+.heading {
+    
+    &--secondary {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+    }
+
+    &--tertiary {
+        font-size: 2.3rem;
+    }
+}
+
+.lines {
+    height: 2px;
+    background-color: $color-grey-3;
+    width: 60px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 1rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        width: 100px;
+        height: 2px;
+        background-color: inherit;
+        transform: translateX(-50%);
+    }
+}

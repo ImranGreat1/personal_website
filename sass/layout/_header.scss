@@ -1,7 +1,8 @@
 .header {
 
     font-size: 1.4rem;
-    padding-top: 2rem;
+    padding: 4rem 2rem 0 2rem;
+        background-color: $color-grey-1;
 }
 
 
@@ -130,7 +131,7 @@
 
 .content {
     height: 100vh;
-    padding-top: 11rem;
+    padding-top: 6.5rem;
 
     display: flex;
     align-items: center;
@@ -141,8 +142,7 @@
     }
 
     &__details {
-        align-self: flex-end;
-        padding-bottom: 10rem;
+        align-self: center;
     }
     
     &__title {
@@ -172,16 +172,16 @@
 
     
     &__img-box {
-        padding-top: 18rem;
         text-align: right;
+        align-self: stretch;
     }
 
     &__img {
-        width: 74%;
-        height: auto;
+        width: 75%;
+        height: 100%;
         display: inline-block;
         margin: 0 auto;
-        align-self: flex-start;
+        
     }
 } 
 
